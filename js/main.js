@@ -14,11 +14,6 @@
 	});
 }(jQuery));
 
-var geocoder;
-
-function initialize(){
-	geocoder = new google.maps.Geocoder();
-}
 
 var IndoorPro = {};
 IndoorPro.Geolocation = {
