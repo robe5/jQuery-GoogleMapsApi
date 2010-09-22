@@ -1,0 +1,54 @@
+body{
+  font-size: 12px;
+}
+
+#main{
+  padding: 50px;
+  font-size: 12px;
+}
+
+.content{
+  margin: 0 auto;
+  width: 640px;
+  text-align: center;
+}
+
+#country{
+  border: 0;
+  width: 100%;
+  outline:0;
+  background:none;
+}
+.selected{
+  border: 1px solid #BDC7D8 !important;
+  background: #E2E8F6;
+}
+
+.wrap{
+  position:relative;
+  border: 1px solid #ccc;
+  overflow:hidden;
+  zoom: 1;
+  padding: 2px;
+  width: 300px;
+}
+
+.wrap .clear{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.clear button{
+  border:0;
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
+  background: transparent;
+  color: #BDC7D8;
+  border-radius: 2px;
+}
+
+.clear button:hover{
+  background: #627AAD;
+}

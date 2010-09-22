@@ -1,44 +1,30 @@
 // http://code.google.com/intl/es-ES/apis/maps/documentation/javascript/services.html#Geocoding
 // http://jqueryui.com/demos/autocomplete/
 
-// For autoselect the first entry
-(function( $ ) {
-	$( ".ui-autocomplete-input" ).live( "autocompleteopen", function() {
-		var autocomplete = $( this ).data( "autocomplete" ),
-			menu = autocomplete.menu;
-
-		if ( !autocomplete.options.selectFirst ) {
-			return;
-		}
-		menu.activate( $.Event({ type: "mouseenter" }), menu.element.children().first() );
-	});
-}(jQuery));
-
-
-var IndoorPro = {};
-IndoorPro.Geolocation = {
+var Maps = {};
+Maps.Geolocation = {
 	initialize: function(){
 		try{
-			IndoorPro.Geolocation.geocoder = new google.maps.Geocoder();
+			Maps.Geolocation.geocoder = new google.maps.Geocoder();
 		}catch(e){
-			IndoorPro.Geolocation.geocoder = null;
+			Maps.Geolocation.geocoder = null;
 		}
 
 		$('.country-selector').autocomplete({
 			selectFirst: true,
-			search: IndoorPro.Geolocation.discard,
-			source: IndoorPro.Geolocation.localities,
-			select: IndoorPro.Geolocation.select
+			search: Maps.Geolocation.discard,
+			source: Maps.Geolocation.localities,
+			select: Maps.Geolocation.select
 		});
 		
-		$('.clear').click(IndoorPro.Geolocation.reset);
+		$('.clear').click(Maps.Geolocation.reset);
 	},
 	
 	geocoder: null,
 		
 	localities: function(request, response){
-		var geocoder = IndoorPro.Geolocation.geocoder;
-		if (!geocoder) return response(IndoorPro.Geolocation.dummyData());
+		var geocoder = Maps.Geolocation.geocoder;
+		if (!geocoder) return response(Maps.Geolocation.dummyData());
 		
 		geocoder.geocode({ 'address': request.term }, 
 			function(results, status){
@@ -63,7 +49,7 @@ IndoorPro.Geolocation = {
 	
 	// reset the text and hidden input
 	reset: function(){
-		IndoorPro.Geolocation.discard();
+		Maps.Geolocation.discard();
 		$('.country-selector').val('').focus();
 	},
 	
@@ -84,5 +70,5 @@ IndoorPro.Geolocation = {
 }
 
 $(document).ready(function(){         
-	IndoorPro.Geolocation.initialize();
+	Maps.Geolocation.initialize();
 });

@@ -1,77 +1,22 @@
 <html>
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <title>Maps</title>
+    <title>Google Maps API Example</title>
 
     <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8.4.custom.css" type="text/css" media="screen" title="jquery ui" charset="utf-8">
     <script src="js/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/jquery-ui-1.8.4.custom.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.ui.autocomplete.selectFirst.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=es"></script>
     <script type="text/javascript" src="js/main.js"></script>
-    <style type="text/css" media="screen">
-      body{
-        font-size: 12px;
-      }
-      
-      #main{
-        padding: 50px;
-        font-size: 12px;
-      }
-      
-      .content{
-        margin: 0 auto;
-        width: 640px;
-        text-align: center;
-      }
-      
-      #country{
-        border: 0;
-        width: 100%;
-        outline:0;
-        background:none;
-      }
-      .selected{
-        border: 1px solid #BDC7D8 !important;
-        background: #E2E8F6;
-      }
-      
-      .wrap{
-        position:relative;
-        border: 1px solid #ccc;
-        overflow:hidden;
-        zoom: 1;
-        padding: 2px;
-        width: 300px;
-      }
-      
-      .wrap .clear{
-        position: absolute;
-        right: 0px;
-        top: 0px;
-      }
-      
-      .clear button{
-        border:0;
-        cursor: pointer;
-        outline: none;
-        font-weight: bold;
-        background: transparent;
-        color: #BDC7D8;
-        border-radius: 2px;
-      }
-      .clear button:hover{
-        background: #627AAD;
-      }
-      .selected .clear{
-      }
-    </style>
+    <link rel="stylesheet" href="css/main.css" type="text/css" media="screen" charset="utf-8">
   </head>
   <body id="index" onload="">
     <div id="main" class="content">
       <table>
         <tr>
           <td>
-            <label for="country">Ciudad:</label>
+            <label for="country">Location:</label>
           </td>
           <td>
             <div class="wrap">
